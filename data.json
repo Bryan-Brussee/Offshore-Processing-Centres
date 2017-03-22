@@ -223,6 +223,11 @@
   { "source": "Total Asylum Seekers",
     "target": "Still on Manus or Nauru",
     "value": "1215" 
+  },
+  {
+    "source": "Total Asylum Seekers",
+    "target": "Location Unknown",
+    "value": "276"
   }
 ],
 
@@ -326,5 +331,11 @@
   {
     "name": "Country Unknown"
   },
-    {"name": "Still on Manus or Nauru"}
+  {
+    "name": "Still on Manus or Nauru"
+  },
+  {
+    "name": "Location Unknown"
+  }
+
 ] }
