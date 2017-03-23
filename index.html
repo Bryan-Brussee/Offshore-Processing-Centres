@@ -44,6 +44,23 @@ h1 {
   stroke: black;
 }
 
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+
 </style>
 <body>
 
@@ -103,12 +120,17 @@ var formatNumber = d3.format(",.0f"),    // zero decimal places
     // color = d3.scale.category20();
 
  // append the svg canvas to the page
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+var svg = d3.select("#chart")
+    .classed("svg-container", true)
+    .append("svg")
+   .attr("preserveAspectRatio", "xMinYMin meet")
+   .attr("viewBox", "0 0 1200 740")
+      .classed("svg-content-responsive", true)
+
   .append("g")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
+
 
 
 // Make ring notes draggable (good for testing, probably not useful for final version)
