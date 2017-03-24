@@ -63,9 +63,6 @@ h1 {
 
 </style>
 <body>
-
-<h1>Movement through Manus and Nauru</h1>
-
  
 <p id="chart">
 
@@ -74,44 +71,11 @@ h1 {
 <script src="d3-ring-note.js"></script>
 <script>
   
-var annotations = [
-  {
-    "cx": 691,
-    "cy": 337,
-    "r": 72,
-    "text": "Combined from 2014 and 2015 data from Senate inquiries",
-    "textWidth": 200,
-    "textOffset": [
-      -85,
-      85
-    ]
-  },
-  {
-    "cx": 440,
-    "cy": 582,
-    "r": 29,
-    "text": "Quick note on Nauru",
-    "textWidth": 200,
-    "textOffset": [
-      119,
-      116
-    ]
-  },
-  {
-    "cx": 442,
-    "cy": 288,
-    "r": 32,
-    "text": "Quick note on Manus",
-    "textOffset": [
-      58,
-      -61
-    ],
-    "hideCircle": true
-  }
-]
+var annotations = [{"cx":17.40363484621048,"cy":50,"r":0,"text":"Refugees/asylum seekers by country. Statistics provided by DIBP Senate inquiries.","textWidth":200,"textOffset":[61.26542091369629,-59.050601959228516]},{"cx":374.68655440211296,"cy":137.34067665738985,"r":0,"text":"Two main offshore processing centres: Nauru, and Manus, located in Papua New Guinea.","textWidth":200,"textOffset":[117.27906322479248,-118.16809844970703]},{"cx":1083.682068912778,"cy":20.914302349090576,"r":0,"text":"Current location","textWidth":200,"textOffset":[0.3270440101623535,-36.85076141357422]},{"cx":728.0258964002132,"cy":92.05903187394142,"r":0,"text":"1,876 people in offshore proeccessing centres at end of 2015.","textWidth":200,"textOffset":[67.91112697124481,-68.8001320362091]}];
+
 var units = "People";
  
-var margin = {top: 10, right: 10, bottom: 10, left: 10},
+var margin = {top: 100, right: 50, bottom: 10, left: 50},
     width = 1200 - margin.left - margin.right,
     height = 740 - margin.top - margin.bottom;
  
@@ -135,7 +99,7 @@ var svg = d3.select("#chart")
 
 // Make ring notes draggable (good for testing, probably not useful for final version)
 var ringNote = d3.ringNote()
-  .draggable(false);
+  .draggable(true);
 
  
 // Set the sankey diagram properties
