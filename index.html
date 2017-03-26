@@ -49,7 +49,7 @@ h1 {
     display: inline-block;
     position: relative;
     width: 100%;
-    padding-bottom: 100%; /* aspect ratio */
+    padding-bottom: 63%; /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
 }
@@ -71,7 +71,7 @@ h1 {
 <script src="d3-ring-note.js"></script>
 <script>
   
-var annotations = [{"cx":17.40363484621048,"cy":50,"r":0,"text":"Refugees/asylum seekers by country. Statistics provided by DIBP Senate inquiries.","textWidth":200,"textOffset":[61.26542091369629,-59.050601959228516]},{"cx":374.68655440211296,"cy":137.34067665738985,"r":0,"text":"Two main offshore processing centres: Nauru, and Manus, located in Papua New Guinea.","textWidth":200,"textOffset":[117.27906322479248,-118.16809844970703]},{"cx":1083.682068912778,"cy":20.914302349090576,"r":0,"text":"Current location","textWidth":200,"textOffset":[0.3270440101623535,-36.85076141357422]},{"cx":728.0258964002132,"cy":92.05903187394142,"r":0,"text":"1,876 people in offshore proeccessing centres at end of 2015.","textWidth":200,"textOffset":[67.91112697124481,-68.8001320362091]}];
+var annotations = [{"cx":17.40363484621048,"cy":50,"r":0,"text":"Refugees/asylum seekers by country. Statistics provided by DIBP Senate inquiries and monthly reports.","textWidth":200,"textOffset":[103.03830909729004,-85.63334274291992]},{"cx":374.68655440211296,"cy":137.34067665738985,"r":0,"text":"Two main offshore processing centres: Nauru, and Manus, located in Papua New Guinea.","textWidth":200,"textOffset":[121.07658672332764,-154.24468231201172]},{"cx":1084.6315537379123,"cy":70.2822499871254,"r":0,"text":"Desintation","textWidth":200,"textOffset":[-84.16810643672943,-120.39649963378906]},{"cx":728.0258964002132,"cy":92.05903187394142,"r":0,"text":"Approx. 1825 people in offshore proeccessing centres in Jan. 2015.","textWidth":200,"textOffset":[61.26544368267059,-108.67424702644348]}];
 
 var units = "People";
  
@@ -99,7 +99,7 @@ var svg = d3.select("#chart")
 
 // Make ring notes draggable (good for testing, probably not useful for final version)
 var ringNote = d3.ringNote()
-  .draggable(true);
+  .draggable(false);
 
  
 // Set the sankey diagram properties
@@ -193,21 +193,6 @@ d3.json("data.json", function(error, graph) {
   
   gAnnotations.selectAll(".annotation circle")
     .classed("hidden", function(d) { return d.hideCircle; });
-
-// the function for moving the nodes
-  // function dragmove(d) {
-  //   d3.select(this).attr("transform", 
-  //       "translate(" + (
-  //            d.x = Math.max(0, Math.min(width - d.dx, d3.event.x))
-  //         ) + "," + (
-  //                  d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
-  //           ) + ")");
-  //   sankey.relayout();
-  //   link.attr("d", path);
-
-
-  // }
-
 
 
 });
